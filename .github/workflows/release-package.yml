@@ -9,7 +9,7 @@ run-name: Creating Stable Release for ${{ github.ref_name }}
 on:
   push:
     branches:
-      - master
+      - main
 
 permissions:
   actions: write
@@ -38,7 +38,7 @@ jobs:
       - name: Setup Node.js 16.x
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           scope: ${{ github.repository_owner }}
           registry-url: https://npm.pkg.github.com/
         env:
