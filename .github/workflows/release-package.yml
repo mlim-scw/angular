@@ -7,8 +7,9 @@ run-name: Creating Stable Release for ${{ github.ref_name }}
 #    branches:
 #      - main
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - master
 
 permissions:
   actions: write
@@ -42,7 +43,10 @@ jobs:
           registry-url: https://npm.pkg.github.com/
         env:
           NODE_AUTH_TOKEN: ${{ github.token }}
-
+      - name: Install dependencies
+        run: npm ci
       - name: Build
-        run:
-          npm publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
