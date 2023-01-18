@@ -1,6 +1,6 @@
 {
   "name": "@mlim-scw/angular",
-  "version": "0.0.2",
+  "version": "0.1.1",
   "repository": "git@github.com:mlim-scw/angular.git",
   "scripts": {
     "ng": "ng",
