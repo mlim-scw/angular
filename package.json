@@ -1,6 +1,7 @@
 {
   "name": "@mlim-scw/angular",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "repository": "git@github.com:mlim-scw/integrations-core.git",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -58,5 +59,8 @@
   },
   "publishConfig": {
     "@mlim-scw:registry": "https://npm.pkg.github.com"
+  },
+  "release": {
+    "branches":["master"]
   }
 }
